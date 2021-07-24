@@ -1,0 +1,23 @@
+{
+  "name": "my-vue-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "concurrently \"yarn dev:vue\"  \"yarn dev:electron\"",
+    "build": "vite build",
+    "serve": "vite preview",
+    "dev:electron": "electron .",
+    "dev:vue": "vite"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "electron": "^13.1.7",
+    "electron-is-dev": "^2.0.0",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.4.3"
+  }
+}
