@@ -1,22 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <n-space vertical size="large">
+    <n-layout has-sider>
+      <n-layout-sider content-style="padding: 24px;">海淀桥</n-layout-sider>
+      <n-layout>
+        <n-layout-header>颐和园路</n-layout-header>
+        <n-layout-content content-style="padding: 24px"
+          >平山道</n-layout-content
+        >
+        <n-layout-footer>成府路</n-layout-footer>
+      </n-layout>
+    </n-layout>
+  </n-space>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
+<script>
+import { NSpace, NLayout } from 'naive-ui'
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'App',
+  components: {
+    NSpace,
+    NLayout
+  }
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

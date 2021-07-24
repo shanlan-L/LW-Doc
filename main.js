@@ -8,6 +8,9 @@ app.whenReady().then(() => {
     width: 800,
     height: 600
   })
+
+  mainWindow.webContents.openDevTools()
+
   const urlLocation = isDev ? 'http://localhost:3000' : '/'
   mainWindow.loadURL(urlLocation)
 })
