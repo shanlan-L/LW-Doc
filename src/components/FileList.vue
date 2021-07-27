@@ -1,12 +1,14 @@
 <template>
   <n-list>
     <n-list-item
-      class="shadow-md"
-      v-for="(item, index) in fileItemList"
+      class="shadow-md hover:bg-green-100"
+      v-for="item in fileItemList"
       :key="item.id"
     >
       <template #prefix>
-        {{ index + 1 + '、' }}
+        <div class="w-6 h-6">
+          <LogoMarkdown />
+        </div>
       </template>
       {{ item.title }}
       <template #suffix>
@@ -21,6 +23,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { NSpace, NButton, NList, NListItem } from 'naive-ui'
+import { LogoMarkdown } from '@vicons/ionicons5'
 
 export default defineComponent({
   name: 'FileList',
@@ -28,7 +31,8 @@ export default defineComponent({
     NList,
     NListItem,
     NButton,
-    NSpace
+    NSpace,
+    LogoMarkdown
   },
   props: {
     fileItemList: {

@@ -8,8 +8,10 @@
           </n-icon>
         </template>
       </n-input>
-      <file-list :fileItemList="fileList"></file-list>
+      <file-list class="mt-4" :fileItemList="fileList"></file-list>
+      <bottom-btn />
     </n-layout-sider>
+
     <n-layout>
       <n-layout-header class="h-1/6 bg-blue-100">标题</n-layout-header>
       <n-layout-content
@@ -27,6 +29,7 @@ import { defineComponent } from 'vue'
 import { Search as FileSearch } from '@vicons/ionicons5'
 
 import FileList from './components/FileList.vue'
+import BottomBtn from './components/BottomBtn.vue'
 
 import fileJson from '../public/fileList.json'
 
@@ -36,7 +39,8 @@ export default defineComponent({
     NSpace,
     NLayout,
     FileSearch,
-    FileList
+    FileList,
+    BottomBtn
   },
   setup() {
     return {
