@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-wrap justify-around">
-    <n-button size="large" type="primary">新建</n-button>
-    <n-button size="large">导入</n-button>
+  <div class="flex flex-wrap justify-end">
+    <n-button class="mr-4 mt-4" size="large" type="primary">新建</n-button>
+    <n-button class="mt-4" size="large">导入</n-button>
   </div>
 </template>
 <script>

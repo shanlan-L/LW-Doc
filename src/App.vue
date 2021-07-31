@@ -9,42 +9,62 @@
         </template>
       </n-input>
       <file-list class="mt-4" :fileItemList="fileList"></file-list>
-      <bottom-btn />
     </n-layout-sider>
 
     <n-layout>
-      <n-layout-header class="h-1/6 bg-blue-100">标题</n-layout-header>
+      <n-layout-header class="h-24 bg-indigo-100">
+        <btn-group />
+      </n-layout-header>
       <n-layout-content
-        class="h-5/6 bg-purple-100"
+        class="h-auto bg-indigo-100"
         content-style="padding: 24px"
-        >内容</n-layout-content
       >
+        <n-tabs type="card" :size="large" closable>
+          <n-tab-pane name="neir" tab="Oasis">
+            <div class="h-content">
+              <v-md-editor
+                v-model="text"
+                mode="editable"
+                :tab-size="2"
+                height="100%"
+              ></v-md-editor>
+            </div>
+          </n-tab-pane>
+          <n-tab-pane name="the beatles" tab="the Beatles">Hey Jude</n-tab-pane>
+          <n-tab-pane name="jay chou" tab="周杰伦">七里香</n-tab-pane>
+        </n-tabs>
+      </n-layout-content>
     </n-layout>
   </n-layout>
 </template>
 
 <script>
-import { NSpace, NLayout } from 'naive-ui'
-import { defineComponent } from 'vue'
+import { NSpace, NLayout, NTabs, NTabPane } from 'naive-ui'
+import { defineComponent, ref } from 'vue'
 import { Search as FileSearch } from '@vicons/ionicons5'
 
 import FileList from './components/FileList.vue'
-import BottomBtn from './components/BottomBtn.vue'
+import BtnGroup from './components/BtnGroup.vue'
 
-import fileJson from '../public/fileList.json'
+import fileJson from '/public/fileList.json'
 
 export default defineComponent({
   name: 'App',
   components: {
     NSpace,
     NLayout,
+    NTabs,
+    NTabPane,
     FileSearch,
     FileList,
-    BottomBtn
+    BtnGroup
   },
   setup() {
+    const text = ref('')
+
     return {
-      fileList: fileJson.data
+      fileList: fileJson.data,
+      text
     }
   }
 })
